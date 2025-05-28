@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Argentrip Administración</title>
+
+  <link rel="icon" href="/images/LogoArgentrip_transparent.png">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/estilo.css?2820822">
+    <link rel="stylesheet" type="text/css" href="../../public/css/whatsapp.css">
+
+    <script src="https://kit.fontawesome.com/45805190a7.js" crossorigin="anonymous"></script>
+
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Bootstrap ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Bundle JS (incluye Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- CSS ALERTIFY-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+    <!-- Default theme ALERTIFY-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
+
+    <!-- CSS fontawesome-->
+    <script src="https://kit.fontawesome.com/35c02bc82e.js" crossorigin="anonymous"></script>
+
+
+    <!-- Scripts -->
+    <script src="../../public/js/app.js" defer></script>
+    <script src="../../public/js/galery.js?28112022" defer></script>
+    <script src="../../public/js/loadNav.js" defer></script> <!-- Archivo que cargará el nav -->
+    <!-- DESARROLLO JavaScript-->
+    <script src="../../public/js/codeUsuario.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="../../public/css/app.css?161120228" rel="stylesheet">
+    <!-- Miniatura de pestaña de pagina -->
+    <link rel="icon" href="../../public/public/images/miniatura.ico">
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="w-100 w-md-75 w-lg-50 mx-auto">
+            <div id="navbar-container"></div> <!-- Aquí se cargará el navbar -->
+        </div>
+        <main class="py-4">
+            <br>
+
+            <div class="container">
+
+                <h1 class="container mb-4">Mi Perfil</h1>
+
+
+
+                </br>
+
+                <div class="container">
+                    <div class="contact__wrapper shadow-lg mt-n9">
+                        <div class="row no-gutters">
+                            <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-2">
+                                <h2 class="color--white mb-5">Tus Datos Actuales:</h2>
+
+                                <ul class="contact-info__list list-style--none position-relative z-index-101"
+                                    id="datosActuales">
+                                    <!-- Aqui van los datos del cliente: -->
+                                </ul>
+
+                                <figure class="figure position-absolute m-0 opacity-06 z-index-100"
+                                    style="bottom:0; right: 10px">
+                                                                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="444px" height="626px">
+                                        <defs>
+                                            <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
+                                                <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
+                                                <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
+                                            </linearGradient>
+
+                                        </defs>
+                                        <path fill-rule="evenodd" opacity="0.302" fill="rgb(72, 155, 248)"
+                                            d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z">
+                                        </path>
+                                        <path fill="url(#PSgrad_1)"
+                                            d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z">
+                                        </path>
+                                    </svg>
+                                </figure>
+                            </div>
+
+                            <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                                <h2 class="color--white mb-5">Edita tu Perfil</h2>
+                                <form action="#" class="contact-form form-validate" novalidate="novalidate" id="editarPerfil"
+                                    >
+                                    <div class="row" id="datosEditar">
+                                        <!-- se insertan los datos a editar -->
+
+                                    </div>
+
+                                    <div class="col-sm-12 mb-12 pl-4 mb-4">
+
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between">
+                                        <button type="submit" class="btn btn-success col-xl-2  col-lg-4 col-md-4 col-sm-4 justify-content-center">Editar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <!-- End Contact Form Wrapper -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript ALERTIFY-->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+    <!-- CDN ALERTA SWEET -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>

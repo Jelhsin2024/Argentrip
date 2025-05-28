@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Argentrip Administración</title>
+
+  <link rel="icon" href="/images/LogoArgentrip_transparent.png">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/estilo.css?2820822">
+    <link rel="stylesheet" type="text/css" href="../../public/css/whatsapp.css">
+
+    <script src="https://kit.fontawesome.com/45805190a7.js" crossorigin="anonymous"></script>
+
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!-- CSS ALERTIFY-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+    <!-- Default theme ALERTIFY-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
+
+    <!-- CSS fontawesome-->
+    <script src="https://kit.fontawesome.com/35c02bc82e.js" crossorigin="anonymous"></script>
+    <!-- CDN DE ALERTYFY -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/alertify.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs/build/alertify.min.js"></script>
+
+
+    <!-- Scripts -->
+    <script src="../../public/js/app.js" defer></script>
+    <script src="../../public/js/galery.js?28112022" defer></script> <!-- DESARROLLO JavaScript-->
+    <script src="../../public/js/codeLoginRegister.js" defer></script>
+    <!-- <script src="../../public/js/loadNav.js" defer></script> --> <!-- Archivo que cargará el nav -->
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="/public/css/app.css?161120228" rel="stylesheet">
+    <!-- Miniatura de pestaña de pagina -->
+    <link rel="icon" href="public/images/miniatura.ico">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- nav.html Admin-->
+<nav class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md bg-light bg-white shadow-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="../plato/indexEntrada.html">
+            <img src="../../public/images/sarten.png" class="sartenAdmin" alt="Main Logo">
+            <img src="../../public/images/logoo.ico" class="logoAdmin" alt="Main Logo">
+            <!-- <span class="admin">Administración</span> -->
+        </a>
+
+    </div>
+</nav>
+
+        <main class="py-4">
+            <br>
+            <br>
+<!--             <div >
+            <a class="admin">
+            Administración
+            </a>
+        </div> -->
+            <br>
+            <br>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-11 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card shadow bg-body">
+                            <div class="card-header">Iniciar Sesión</div>
+
+                            <div class="card-body">
+                                <form id="formLoginId">
+                                    <div class="mb-3">
+                                        <label for="emailLogin" class="form-label">Dirección de Correo</label>
+                                        <input type="email" name="emailLogin" class="form-control" id="emailLogin"
+                                            placeholder="Ingrese su Correo" required />
+                                        <div id="emailHelp" class="form-text">
+                                            Nunca compartiremos tu correo con nadie.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="passwordLogin" class="form-label">Contraseña</label>
+                                        <div class="input-group">
+                                            <input type="password" name="passwordLogin" placeholder="Introduzca su contraseña" class="form-control" id="passwordLogin" required>
+                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                                <i class="fa-solid fa-eye" id="toggleIcon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <br>
+                                    <!-- Botones alineados usando Bootstrap -->
+                                    <div class="modal-footer d-flex justify-content-between">
+
+                                        <!-- Botón Registrar a la izquierda -->
+                                        <button type="submit"
+                                            class="btn btn-success col-xl-4  col-lg-4 col-md-4 col-sm-4 justify-content-center">Ingresar</button>
+                                        <!-- Botón Ingresar a la derecha -->
+                                        <button type="button"
+                                            class="btn btn-primary col-xl-4 col-lg-4 col-md-4 col-sm-4 justify-content-center"
+                                            data-bs-toggle="modal" data-bs-target="#modalRegistro" id="btnRegister"
+                                            form="formLoginId">
+                                            Registrate
+                                        </button>
+
+                                    </div>
+
+                                </form>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    <!-- Modal formulario de ingreso de datos modal-->
+
+
+    <div id="modalRegistro" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalRegistroLabel">Registrar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="formModalId" class="row g-3">
+                        <div class="col-md-5">
+                            <label for="emailRegister" class="form-label">Correo</label>
+
+                            <input type="email" name="emailRegister" placeholder="Ingrese su correo"
+                                class="form-control" id="emailRegister" required><!-- required -->
+
+                        </div>
+                        <div class="col-md-5">
+                            <label for="passwordRegister" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" name="passwordRegister" id="passwordRegister"
+                                placeholder="Ingrese su Contraseña" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="nombreRegister" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombreRegister" name="nombreRegister"
+                                placeholder="Ingresar nombre" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="apellidoRegister" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="apellidoRegister" name="apellidoRegister"
+                                placeholder="Ingresar Apellido" required>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label for="direccionRegister" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="direccionRegister" name="direccionRegister"
+                                required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="localidadRegister" class="form-label">Localidad</label>
+                            <select class="form-select" id="localidadRegister" name="localidadRegister" required>
+
+                                <option>Sarandí</option>
+                                <option>Wilde</option>
+                                <option>Quilmes</option>
+                                <option>Avellaneda</option>
+                            </select>
+                        </div>
+<!--                         <div class="col-md-4">
+                            <label for="rolRegister" class="form-label">Rol</label>
+                            <select class="form-select" id="rolRegister" name="rolRegister" required>
+
+                                <option>Administrador</option>
+                                <option>Mozo</option>
+                                <option>Recepcionista</option>
+                                <option>Cocinero</option>
+                            </select>
+                        </div> -->
+                        <div class="col-md-4">
+                            <label for="celularRegister" class="form-label">Celular</label>
+                            <input type="number" class="form-control" id="celularRegister" name="celularRegister"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="foto" class="col-form-label">Foto</label>
+                            <input type="file" class="form-control" id="fotoRegister"
+                                aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                            
+                        </div>
+<!--                         <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="terminosCondiciones"
+                                    required>
+                                <label class="form-check-label" for="terminosCondiciones">
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formModalId" class="btn btn-primary">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN DEL MODAL -->
+    </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript ALERTIFY-->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+    <!-- CDN ALERTA SWEET -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
