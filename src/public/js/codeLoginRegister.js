@@ -94,7 +94,7 @@ async function loginUsuario() {
 
     try {
         console.log(emailLogin.value,passwordLogin.value);
-        const response = await fetch("http://localhost:3000/api/auth/login", {
+        const response = await fetch("http://192.168.0.186:3000/api/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
@@ -153,7 +153,7 @@ async function registrarUsuario() {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/api/auth/register", {
+        const response = await fetch("http://192.168.0.186:3000/api/auth/register", {
             method: "POST",
             body: formData,
         });
