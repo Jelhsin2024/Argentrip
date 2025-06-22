@@ -1,3 +1,13 @@
+/* 1. Que html y body ocupen todo el alto y no tengan márgenes */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;    /* oculta cualquier exceso en X */
+  box-sizing: border-box;
+}
+
+
 .fondo {
 	background: #F2F3F4 ;}
 
