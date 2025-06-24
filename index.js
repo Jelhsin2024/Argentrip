@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 // Middleware para habilitar CORS
 app.use(cors({
-    HEAD,
+    
     origin: '*', // Permite solicitudes desde este origen
 
 
@@ -171,6 +171,6 @@ app.get("/contacto/comentarios", (req, res) => {
 
 // Configura el puerto
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Servidor escuchando en http://192.168.0.186:${PORT}`));
+app.listen(PORT, () => console.log(`Servidor escuchando en http://localhost:${PORT}`));
 
 /* console.log((__dirname + '/src/'+"RUTA DIRNAME Y")) */
