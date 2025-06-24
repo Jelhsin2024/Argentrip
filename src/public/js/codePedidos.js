@@ -1,5 +1,5 @@
 // Definición de la URL
-const url = 'http://localhost:3000/api/pedidos/';
+const url = 'http://192.168.0.186:3000/api/pedidos/';
 
 // Capturando tbody
 const contenedor = document.getElementById('tbodyId');

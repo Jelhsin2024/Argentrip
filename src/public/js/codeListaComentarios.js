@@ -2,7 +2,7 @@
 
 
 
-const url = 'http://localhost:3000/api/comentarios/'
+const url = 'http://192.168.0.186:3000/api/comentarios/'
 
 
 
