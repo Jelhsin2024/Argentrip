@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 // Middleware para habilitar CORS
 app.use(cors({
-    origin: 'http://localhost:3000', // Permite solicitudes desde este origen
+    origin: '*', // Permite solicitudes desde este origen
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
     credentials: true // Habilita el envío de cookies
