@@ -1,6 +1,6 @@
 //definicion de url
-const urlIndex = 'http://localhost:3000/api/platillos'
-const urlVideos = 'http://localhost:3000/api/videoportadas'
+const urlIndex = 'http://192.168.0.5:3000/api/platillos'
+const urlVideos = 'http://192.168.0.5:3000/api/videoportadas'
 //capturando tbody
 
 const contenedorIndex = document.getElementById('entradaIndex');
@@ -114,7 +114,7 @@ if (h3=="Vuelos"){
     
     const mostrarIndex = (indexplatillos)=>{
         indexplatillos.forEach(indexplatillo => {
-            if(indexplatillo.tipo=="Vuelos"){
+            if(indexplatillo.tipo=="Alojamiento"){
             resultadosIndex+=`
                 <div class="cuadricula_items">
                     <div class="cuadricula_caja">
@@ -175,7 +175,7 @@ if (h3=="Alojamiento"){
     
     const mostrarIndex = (indexplatillos)=>{
         indexplatillos.forEach(indexplatillo => {
-            if(indexplatillo.tipo=="Alojamiento"){
+            if(indexplatillo.tipo=="Vuelos"){
             resultadosIndex+=`
                 <div class="cuadricula_items">
                     <div class="cuadricula_caja">

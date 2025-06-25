@@ -14,7 +14,7 @@ fetch('/pages/admin/footer.html')
 
     // URL del footer y API de contactos
 const footerUrl = '/pages/admin/footer.html';
-const contactosApi = 'http://192.168.0.5:3000/api/contactos';
+const contactosApi = 'http://localhost:3000/api/contactos';
 
 // Función para cargar el footer
 const cargarFooter = () => {

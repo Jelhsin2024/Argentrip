@@ -1,4 +1,4 @@
-const url = 'http://192.168.0.5:3000/pedidos'
+const url = 'http://localhost:3000/pedidos'
 
 
 //-------------------------------------------------------

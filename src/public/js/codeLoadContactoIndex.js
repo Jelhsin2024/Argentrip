@@ -1,5 +1,5 @@
 //definicion de url
-const urlContacto = "http://localhost:3000/api/contactos";
+const urlContacto = "http://192.168.0.5:3000/api/contactos";
 
 document.addEventListener("DOMContentLoaded", () => {
     const whatsappContenerdor = document.getElementById("whatsapp");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contactos.forEach((contacto) => {
             if (parseInt(contacto.activo) === 1) {
                 whatsappIndex += `
-                    <a href="https://api.whatsapp.com/send?phone=+549${contacto.whatsapp}&text=🔥¡Vi%20un%20paquete%20!🔥%20%20Quiero%20hacerte%20una%20reserva 🛫%20%20%20📌"
+                    <a href="https://api.whatsapp.com/send?phone=+549${contacto.whatsapp}&text=¡Hola!😃%20Vi%20un%20paquete%20y%20quiero%20hacer%20una%20reserva🛎️"
                     class="float" target="_blank">
                         <i class="fa fa-whatsapp my-float"></i>
                     </a>

@@ -85,7 +85,7 @@ document.getElementById('saveRating').addEventListener('click', () => {
     // Aquí puedes enviar `selectedRating` y `comentario` al servidor con fetch o axios
 });
 
-const url = 'http://localhost:3000/api/comentarios/'
+const url = 'http://192.168.0.5:3000/api/comentarios/'
 
 
 
@@ -325,7 +325,7 @@ formComentario.addEventListener('submit', async (e) => {
         console.log('User ID obtenido:', userId);
 
         // Realizar consulta al endpoint para obtener el usuario
-        const response = await fetch(`http://localhost:3000/api/auth/${userId}`);
+        const response = await fetch(`http://192.168.0.5:3000/api/auth/${userId}`);
         if (!response.ok) {
             throw new Error('Error al obtener los datos del usuario');
         }
@@ -352,7 +352,7 @@ formComentario.addEventListener('submit', async (e) => {
 
         // Verificar si estamos creando o editando
         if (opcion === 'crear') {
-            const createResponse = await fetch("http://localhost:3000/api/comentarios", {
+            const createResponse = await fetch("http://192.168.0.5:3000/api/comentarios", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

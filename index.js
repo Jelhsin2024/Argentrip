@@ -18,7 +18,7 @@ app.use(cookieParser());
 // Middleware para habilitar CORS
 app.use(cors({
     
-    origin: 'http//www.argentrip.com.ar', // Permite solicitudes desde este origen
+    origin: 'http//192.168.0.5:3000', // Permite solicitudes desde este origen
 
 
 

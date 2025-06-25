@@ -133,3 +133,19 @@ async function cargarNav() {
 
 // Llamar a la función para cargar el navbar
 cargarNav();
+// 1) selecciono el elemento colapsable
+const collapseEl = document.getElementById('navbarNavDropdown');
+// 2) creo UNA sola instancia (sin hacer toggle inmediato)
+const collapseInstance = bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false });
+
+// 3) selecciono el botón toggler
+const toggler = document.querySelector('.navbar-toggler');
+// 4) limpio listeners previos (por si acaso)
+toggler.replaceWith(toggler.cloneNode(true));
+const newToggler = document.querySelector('.navbar-toggler');
+
+// 5) le agrego mi propio listener que llame a toggle()
+//    así me aseguro de que expanda y colapse siempre
+newToggler.addEventListener('click', () => {
+  collapseInstance.toggle();
+});

@@ -1,5 +1,5 @@
 //definicion de url
-const url = "http://localhost:3000/api/auth/";
+const url = "http://192.168.0.5:3000/api/auth/";
 
 
 //capturando tbody para mostrar los usuarios
@@ -207,7 +207,7 @@ formRegister.addEventListener("submit", (e) => {
     
         if (opcion === 'crear') {
             // Procedimiento para crear
-            fetch("http://localhost:3000/api/auth/register", {
+            fetch("http://192.168.0.5:3000/api/auth/register", {
                 method: 'POST',
                 body: formData // Envía el FormData
             })
