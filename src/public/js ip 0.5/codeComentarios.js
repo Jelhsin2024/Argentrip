@@ -5,7 +5,7 @@ const formComentario = document.querySelector('form')
 const stars = document.querySelectorAll('.star');
 const ratingDisplay = document.getElementById('ratingDisplay');
 const commentInput = document.getElementById('comment');
-/* const respuestaInput = document.getElementById('respuesta'); */
+const respuestaInput = document.getElementById('respuesta');
 // Inicialización del modal con opciones personalizadas (si es necesario)
 var ratingModal = new bootstrap.Modal(document.getElementById('ratingModal'), {
 
@@ -35,7 +35,7 @@ function updateStars(rating) {
     star.addEventListener('click', () => {
         const rating = star.getAttribute('data-value');
         updateStars(rating);
-        /* console.log(`Puntuación seleccionada: ${rating}`); */
+        
     });
 });
 
@@ -54,7 +54,7 @@ function updateStars(rating) {
 
 
    // Contador de caracteres en el comentario
-/*    respuestaInput.addEventListener('input', () => {
+   respuestaInput.addEventListener('input', () => {
     const currentLength = respuestaInput.value.length;
     charCounterRespuesta.textContent = `${currentLength} / 120 caracteres`;
 
@@ -63,7 +63,7 @@ function updateStars(rating) {
     } else {
         charCounterRespuesta.style.color = 'gray'; // Mantén el color gris cuando esté dentro del límite
     }
-}); */
+});
 
 
 // Guardar puntuación y comentario
@@ -85,7 +85,7 @@ document.getElementById('saveRating').addEventListener('click', () => {
     // Aquí puedes enviar `selectedRating` y `comentario` al servidor con fetch o axios
 });
 
-const url = 'http://localhost:3000/api/comentarios/'
+const url = 'http://192.168.0.5:3000/api/comentarios/'
 
 
 
@@ -115,23 +115,20 @@ function obtenerIdUsuarioDeCookie() {
 
 
 const mostrar = (platillos)=>{
-    const userId = obtenerIdUsuarioDeCookie();
-    console.log('User ID obtenido:', userId);
     let resultados ='';
     let estrellas = ""; 
     platillos.forEach(platillo => {
-                // Crear el objeto de fecha y formatearlo antes de usarlo en la plantilla
-                const fecha = new Date(platillo.fecha_creacion);
-                const opciones = {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: true,
-                };
-                const fechaLegible = fecha.toLocaleDateString('es-AR', opciones);
-        if(platillo.nombreID==userId){
+                        // Crear el objeto de fecha y formatearlo antes de usarlo en la plantilla
+                        const fecha = new Date(platillo.fecha_creacion);
+                        const opciones = {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: true,
+                        };
+                        const fechaLegible = fecha.toLocaleDateString('es-AR', opciones);
         if (parseInt(platillo.puntuacion) === 1) {
 
             estrellas=`
@@ -203,10 +200,8 @@ const mostrar = (platillos)=>{
                             </div>
             </td>
             <td>${platillo.comentario}</td>
-                        <td>${platillo.respuesta}</td>
+            <td>${platillo.respuesta}</td>
             <td>${fechaLegible}</td>
-            
-
             
             
             <td class="text-center">
@@ -218,10 +213,9 @@ const mostrar = (platillos)=>{
             </td>
         </tr>
         `
-}})
+    })
     //mostramos con la variable resultado
     contenedor.innerHTML = resultados;
-
 }
 
 
@@ -285,7 +279,7 @@ on(document, 'click', '.btnEditar', async (e) => {
 
         // Llenar los campos del modal
         commentInput.value = comentario.comentario;
-/*         respuestaInput.value = comentario.respuesta; */
+        respuestaInput.value = comentario.respuesta;
         ratingDisplay.textContent = `Puntuación: ${comentario.puntuacion}`;
 
         // Actualizar estrellas basadas en la puntuación
@@ -316,7 +310,7 @@ function clearStars() {
 btnCrear.addEventListener('click', () => {
     // Limpiar valores del modal
     commentInput.value = '';
-/*     respuestaInput.value = ''; */
+    respuestaInput.value = '';
     clearStars(); // Llamar a la función para reiniciar las estrellas
     ratingModal.show();
     opcion = 'crear';
@@ -331,7 +325,7 @@ formComentario.addEventListener('submit', async (e) => {
         console.log('User ID obtenido:', userId);
 
         // Realizar consulta al endpoint para obtener el usuario
-        const response = await fetch(`http://localhost:3000/api/auth/${userId}`);
+        const response = await fetch(`http://192.168.0.5:3000/api/auth/${userId}`);
         if (!response.ok) {
             throw new Error('Error al obtener los datos del usuario');
         }
@@ -343,22 +337,22 @@ formComentario.addEventListener('submit', async (e) => {
             nombre: usuario.nombre,
             puntuacion: selectedRating,
             comentario: commentInput.value.trim(),
-/*             respuesta: respuestaInput.value.trim(), */
+            respuesta: respuestaInput.value.trim(),
         };
 
                 // Crear el objeto JSON con los datos
         const dataEdit = {
-            nombreID: usuario.id,
-            nombre: usuario.nombre,
+            /* nombreID: usuario.id, */
+            /* nombre: usuario.nombre, */
             puntuacion: selectedRating,
             comentario: commentInput.value.trim(),
-/*             respuesta: respuestaInput.value.trim(), */
+            respuesta: respuestaInput.value.trim(),
         };
         console.log('Datos enviados:', data);
 
         // Verificar si estamos creando o editando
         if (opcion === 'crear') {
-            const createResponse = await fetch("http://localhost:3000/api/comentarios", {
+            const createResponse = await fetch("http://192.168.0.5:3000/api/comentarios", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Argentrip Administración</title>
+    <title>Argentrip Administración</title>
 
-  <link rel="icon" href="/images/LogoArgentrip_transparent.png">
+    <link rel="icon" href="/images/LogoArgentrip_transparent.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +49,11 @@
     <link href="../../public/css/app.css?161120228" rel="stylesheet">
     <!-- Miniatura de pestaña de pagina -->
     <link rel="icon" href="../../public/public/images/miniatura.ico">
+
+
+    <!-- datatable para mostrar maslindo todo -->
+
+
 </head>
 
 <body>
@@ -62,7 +67,7 @@
             <br>
             <div class="container">
 
-                <h1 class="container mb-4">Lista de platillos </h1>
+                <h1 class="container mb-4">Lista de paquetes </h1>
                 <h1 id="welcome"></h1>
                 <p id="role"></p>
                 </br>
@@ -70,12 +75,14 @@
                 <!--                 <button id="btnCrear" type="button" class="btn btn-success" data-bs-toggle="modal" >Ingresar Nuevo Platillo</button> -->
 
                 <button id="btnCrear" type="button" class="btn btn-success" data-bs-toggle="modal"
-                    data-bs-target="#modalPlatillo">Ingresar Nuevo Platillo</button>
+                    data-bs-target="#modalPlatillo">Ingresar Nuevo Paquete</button>
                 <!-- <button id="logout" type="button" class="btn btn-outline-danger">Logout</button> -->
                 </br></br></br>
 
                 <!--TABLA DE PLATILLOS-->
-                <div class="card shadow bg-body">
+                <!-- <div class="card shadow bg-body">
+
+                    
                     <div class="card-body">
                         <table
                             class="table table-bordered table-striped table-hover table-responsive table-sm align-middle"
@@ -97,7 +104,32 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> -->
+                <div class="card shadow bg-body">
+<div class="table-responsive card-body">
+  <table
+    id="tablaPlatillos"
+    class="table table-striped table-bordered nowrap"
+    style="width:100%"
+  >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Foto</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tbodyId">
+      <!-- Tus filas dinámicas -->
+    </tbody>
+  </table>
+</div>
+</div>
+
             </div>
             <!-- Modal formulario de ingreso de datos modal-->
 

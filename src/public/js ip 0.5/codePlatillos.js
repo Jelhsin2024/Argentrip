@@ -1,5 +1,5 @@
 //definicion de url
-const url = 'http://localhost:3000/api/videoportadas/'
+const url = 'http://192.168.0.5:3000/api/platillos/'
 
 
 //capturando tbody
@@ -8,20 +8,31 @@ let resultados =''
 
 
 //seleccionamos el modal
-const formVideoPortada = document.querySelector('form')
+const formPlatillo = document.querySelector('form')
 
 
 //seleccionando input del formulario modal
-const nombreVideo = document.getElementById('nombreVideo')
-const descripcionVideo = document.getElementById('descripcionVideo')
-const video = document.getElementById('video')//video que se busca desde el servidor.
-const videoModal = document.getElementById('videoModal')//Video que se le insertara al modal cuando presione editar, pero cuando guardo no se mostrara
-const tipoVideo = document.getElementById('tipoVideo')
+const nombre = document.getElementById('nombre')
+const descripcion = document.getElementById('descripcion')
+const precio = document.getElementById('precio')
+const foto = document.getElementById('foto')
+const imgModal = document.getElementById('imgModal')
+const tipo = document.getElementById('inputState')
 let opcion = ''
+
+
+    // Capturamos el botón de logout
+    /* const logout = document.getElementById('logout'); */
+/*     logout.addEventListener('click', () => {
+        // Cerramos sesión eliminando los valores de la cookie
+        document.cookie = 'jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        document.location.href = "/login";
+    }); */
+
 
 // Agrega un evento para detectar cambios en el input (cuando se selecciona un archivo)
 let archivoSeleccionado = null;
-video.addEventListener('change', (event) => {
+foto.addEventListener('change', (event) => {
     archivoSeleccionado = event.target.files[0]; // Accede al archivo
 /*     console.log("Archivo seleccionado:", archivoSeleccionado); // Imprime la información del archivo
     if (archivoSeleccionado) {
@@ -33,40 +44,41 @@ video.addEventListener('change', (event) => {
 
 
 // Inicialización del modal con opciones personalizadas (si es necesario)
-var modalVideoPortada = new bootstrap.Modal(document.getElementById('modalVideoPortada'), {
+var modalPlatillo = new bootstrap.Modal(document.getElementById('modalPlatillo'), {
 
 });
 
 //funcion para abrir modal
 btnCrear.addEventListener('click',()=>{
     //limpiamos valores del modal
-    nombreVideo.value = ''
-    descripcionVideo.value = ''
-    videoModal.src = ''
-    video.src = ''
+    nombre.value = ''
+    descripcion.value = ''
+    precio.value = ''
+    imgModal.src = ''
     archivoSeleccionado = null;
-    tipoVideo.value = 'Seleciona la portada'
+    tipo.value = ''
     //mostramos el modal
-    modalVideoPortada.show()
+    modalPlatillo.show()
     //opcion para editar en el mismo modal
     opcion = 'crear'
 })
 
 //funcion para mostrar los platillos
 
-const mostrar = (videoportadas)=>{
-    videoportadas.forEach(videoportada => {
+const mostrar = (platillos)=>{
+    platillos.forEach(platillo => {
         resultados+=`
         <tr>
-            <td>${videoportada.id}</td>
+            <td>${platillo.id}</td>
             <td>
-                <video class="img-thumbnail img-fluid" src="../../public/video/${videoportada.file_videoPortada}" id="videoModal" width="150px" autoplay muted loop></video>
+                <img class="img-thumbnail img-fluid" src="../../public/${platillo.foto || '../../public/default-image.jpg'}" alt="" width="150px">
+
             </td>
             
-            <td>${videoportada.nombre_videoPortada}</td>
-            <td>${videoportada.descripcion_videoPortada}</td>
-            <td>${videoportada.tipo_videoPortada}</td>
-
+            <td>${platillo.nombre}</td>
+            <td>${platillo.descripcion}</td>
+            <td>${platillo.tipo}</td>
+            <td>$${platillo.precio}</td>
             
             
             <td class="text-center">
@@ -109,7 +121,7 @@ on(document, 'click', '.btnBorrar', e => {
     const id = fila.firstElementChild.innerHTML;
 
     
-    alertify.confirm("¿Estás seguro de que deseas borrar este video de portada?",
+    alertify.confirm("¿Estás seguro de que deseas borrar este platillo?",
         function(){
             fetch(url+id, {
                 method: 'DELETE'
@@ -133,41 +145,44 @@ on(document, 'click', '.btnEditar', e => {
     idForm = fila.children[0].innerHTML;
 
     // Obtén el src de la imagen en la fila actual
-    const videoForm = fila.querySelector('video').src; // Captura correctamente el video
-    videoModal.src = videoForm;// muestra la imagen en el modal
+    const fotoForm = fila.querySelector('img').src; // Captura correctamente la imagen
+    imgModal.src = fotoForm;// muestra la imagen en el modal
 
     // Asigna los valores al formulario
-    nombreVideo.value = fila.children[2].innerHTML;
-    descripcionVideo.value = fila.children[3].innerHTML;
-    tipoVideo.value = fila.children[4].innerHTML;
+    nombre.value = fila.children[2].innerHTML;
+    descripcion.value = fila.children[3].innerHTML;
+    tipo.value = fila.children[4].innerHTML;
 
-
+    //le quitamos el signo $ a la variable fila.children 5
+    const sinCaracter = fila.children[5].innerHTML.replace("$", ""); // Quita el signo de dólar
+    console.log(sinCaracter); // Resultado: "10000"
+    precio.value=sinCaracter;// asignamos el valor numerico sin $ 
     // Limpia la selección de archivo
     archivoSeleccionado = null;
-    video.value = ''; // Limpia el input de archivo
+    foto.value = ''; // Limpia el input de archivo
 /*     console.log(imgModal.src+"Muestro tambien el valor de foto value: "+foto.value) */
     opcion = 'editar';
-    modalVideoPortada.show();
+    modalPlatillo.show();
     
 });
     
 
-formVideoPortada.addEventListener('submit', (e) => {
+formPlatillo.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Crea un nuevo objeto FormData
     const formData = new FormData();
 
     // Añade los datos del formulario al objeto FormData
-    formData.append('nombre_videoPortada', nombreVideo.value);
-    formData.append('descripcion_videoPortada', descripcionVideo.value);
-    formData.append('tipo_videoPortada', tipoVideo.value);
-
+    formData.append('nombre', nombre.value);
+    formData.append('descripcion', descripcion.value);
+    formData.append('precio', precio.value);
+    formData.append('tipo', tipo.value);
 
     // Solo añadimos 'foto' al FormData si se seleccionó una nueva imagen
     if (archivoSeleccionado) {
-        formData.append('file_videoPortada', archivoSeleccionado); // Añade el archivo al FormData
-    } else if (opcion === 'editar' && videoModal.src) {
+        formData.append('foto', archivoSeleccionado); // Añade el archivo al FormData
+    } else if (opcion === 'editar' && imgModal.src) {
         // No añadimos el campo 'foto' al FormData si ya hay una imagen y no se seleccionó una nueva
         console.log("Conservando la imagen actual, no se envía ninguna imagen nueva.");
     }
@@ -183,6 +198,7 @@ formVideoPortada.addEventListener('submit', (e) => {
         .then(response => response.json())
         .then(data => {
             mostrar([data]);
+            modalPlatillo.hide();
             location.reload(); // Recargamos la página después de crear
         })
         .catch(error => console.log(error)); // Manejo de errores
