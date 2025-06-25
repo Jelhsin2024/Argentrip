@@ -33,7 +33,7 @@ const uploads = multer({
         };
         cb("El timpo de archivo es soportado, pone bien!!!") 
     },
-    limits: {fileSize: 1024*1024*1}
+    limits: {fileSize: 1024*1024*1000}
 });
 
 /* MULTER FIN */

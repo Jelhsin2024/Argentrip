@@ -1,6 +1,6 @@
 //definicion de url
-const urlIndex = 'http://192.168.0.186:3000/api/platillos'
-const urlVideos = 'http://192.168.0.186:3000/api/videoportadas'
+const urlIndex = 'http://192.168.0.5:3000/api/platillos'
+const urlVideos = 'http://192.168.0.5:3000/api/videoportadas'
 //capturando tbody
 
 const contenedorIndex = document.getElementById('entradaIndex');

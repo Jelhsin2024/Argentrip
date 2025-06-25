@@ -1,5 +1,5 @@
 //definicion de url
-const url = 'http://192.168.0.186:3000/api/platillos/'
+const url = 'http://192.168.0.5:3000/api/platillos/'
 //capturando tbody
 
 const contenedorIndex = document.getElementById('entradaIndex');
