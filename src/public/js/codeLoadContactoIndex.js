@@ -1,5 +1,5 @@
 //definicion de url
-const urlContacto = "http://192.168.0.5:3000/api/contactos";
+const urlContacto = `${API_URL}/contactos`;
 
 document.addEventListener("DOMContentLoaded", () => {
     const whatsappContenerdor = document.getElementById("whatsapp");

@@ -1,5 +1,5 @@
 // Definición de URL
-const url = 'http://192.168.0.5:3000/api/contactos/';
+const url = `${API_URL}/contactos/`;
 
 // Capturando tbody
 const contenedor = document.getElementById('tbodyId');
