@@ -171,6 +171,6 @@ app.get("/contacto/comentarios", (req, res) => {
 
 // Configura el puerto
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Servidor escuchando en http://www.argentrip.com.ar:${PORT}`));
+app.listen(PORT, () => console.log(`Servidor escuchando en http://localhost:${PORT}`));
 
 /* console.log((__dirname + '/src/'+"RUTA DIRNAME Y")) */
