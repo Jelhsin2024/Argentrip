@@ -18,7 +18,7 @@ app.use(cookieParser());
 // Middleware para habilitar CORS
 app.use(cors({
     
-    origin: 'http//192.168.0.5:3000', // Permite solicitudes desde este origen
+    origin: 'http//localhost:3000', // Permite solicitudes desde este origen
 
 
 
