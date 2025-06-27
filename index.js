@@ -16,7 +16,7 @@ const { soloAdmin, soloPublico, verificarRol } = require("./middleware/admin.mid
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://caring-love-production.up.railway.app'
+  'https://argentrip-production.up.railway.app'
 ];
 app.use(cookieParser());
 app.use(cors({
