@@ -372,7 +372,7 @@ formComentario.addEventListener('submit', async (e) => {
             mostrar([createdData]); // Muestra el nuevo comentario en la tabla
             alertify.success('Comentario creado exitosamente');
         } else if (opcion === 'editar') {
-            const editResponse = await fetch(`${url}${idComentario}`, {
+            const editResponse = await fetch(`${url}/${idComentario}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
