@@ -207,7 +207,7 @@ formRegister.addEventListener("submit", (e) => {
     
         if (opcion === 'crear') {
             // Procedimiento para crear
-            fetch("http://192.168.0.5:3000/api/auth/register", {
+            fetch(`${API_URL}/auth/register`, {
                 method: 'POST',
                 body: formData // Envía el FormData
             })
