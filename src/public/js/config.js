@@ -1,2 +1,1 @@
-// config.js
-window.API_URL = 'http://localhost:3000/api';
+window.API_URL = window.location.origin + '/api';

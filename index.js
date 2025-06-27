@@ -14,9 +14,14 @@ const path = require("path");
 // Middlewares
 const { soloAdmin, soloPublico, verificarRol } = require("./middleware/admin.middleware");
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://caring-love-production.up.railway.app'
+];
 app.use(cookieParser());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: allowedOrigins,
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
