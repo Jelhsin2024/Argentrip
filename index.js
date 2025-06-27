@@ -15,15 +15,16 @@ const path = require("path");
 const { soloAdmin, soloPublico, verificarRol } = require("./middleware/admin.middleware");
 
 const allowedOrigins = [
+  '**',
   'http://localhost:3000',
   'https://argentrip-production.up.railway.app'
 ];
 app.use(cookieParser());
 app.use(cors({
-  origin: allowedOrigins,
+  origin: "*",  // ✅ así se permite cualquier origen (solo para pruebas!) siempre se debe definir el origen por seguridad
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  credentials: false // ⚠️ Importante: cambiar en produccion
 }));
 
 app.use(express.json());
